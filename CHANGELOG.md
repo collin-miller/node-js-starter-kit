@@ -9,3 +9,13 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 
 * **transpilers:** added prod and dev transpilers ([92f1efa](https://github.com/collin-miller/node-js-starter-kit/commit/92f1efa))
+
+
+
+<a name="1.0.0"></a>
+# 1.0.0 (2019-09-08)
+
+
+### Features
+
+* **transpilers:** added prod and dev transpilers ([92f1efa](https://github.com/collin-miller/node-js-starter-kit/commit/92f1efa))
