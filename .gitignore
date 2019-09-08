@@ -59,3 +59,9 @@ typings/
 
 # next.js build output
 .next
+
+# MacOs hidden files
+.DS_Store
+
+# Webpack Bundles
+dist/
