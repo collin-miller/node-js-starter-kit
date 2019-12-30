@@ -22,10 +22,18 @@
     "commitlint": "^8.1.0",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-jest": "^23.2.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
     "husky": "^3.0.5",
     "jest": "^24.9.0",
     "nodemon": "^1.19.2",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
     "standard-version": "^7.0.0",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.8",
@@ -38,7 +46,8 @@
     "start:dev": "npx nodemon index.js --watch ./**.js --exec babel-node",
     "commit": "npx git-cz",
     "first-release": "npm run release -- --first-release",
-    "release": "npx standard-version --preset angular"
+    "release": "npx standard-version --preset angular",
+    "lint": "npx eslint . --debug"
   },
   "repository": {
     "type": "git",
@@ -52,7 +61,7 @@
   "homepage": "https://github.com/collin-miller/node-js-starter-kit#readme",
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS && pretty-quick --staged"
     }
   },
   "config": {
@@ -69,5 +78,10 @@
         "lines": 80
       }
     }
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   }
 }
