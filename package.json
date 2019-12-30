@@ -33,6 +33,7 @@
     "jest": "^24.9.0",
     "nodemon": "^1.19.2",
     "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
     "standard-version": "^7.0.0",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.8",
@@ -60,7 +61,7 @@
   "homepage": "https://github.com/collin-miller/node-js-starter-kit#readme",
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS && pretty-quick --staged"
     }
   },
   "config": {
