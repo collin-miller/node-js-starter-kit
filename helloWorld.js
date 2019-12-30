@@ -1,4 +1,8 @@
 export default class HelloWorld {
+
+
+
+
   constructor(options) {
     this.message = options.message;
     this.logger = options.logger || console;

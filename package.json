@@ -77,5 +77,10 @@
         "lines": 80
       }
     }
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   }
 }
