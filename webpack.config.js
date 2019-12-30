@@ -16,53 +16,53 @@ const nodeExternals = require('webpack-node-externals');
  */
 
 module.exports = {
-	mode: 'development',
-	entry: './index.js',
+  mode: 'development',
+  entry: './index.js',
 
-	output: {
-		filename: 'server.js',
-		path: path.resolve(__dirname, 'dist')
-	},
+  output: {
+    filename: 'server.js',
+    path: path.resolve(__dirname, 'dist')
+  },
 
-	plugins: [new webpack.ProgressPlugin()],
-	externals: [nodeExternals()],
+  plugins: [new webpack.ProgressPlugin()],
+  externals: [nodeExternals()],
 
-	module: {
-		rules: [
-			{
-				test: /.(js|jsx)$/,
-				include: [],
-				loader: 'babel-loader',
+  module: {
+    rules: [
+      {
+        test: /.(js|jsx)$/,
+        include: [],
+        loader: 'babel-loader',
 
-				options: {
-					plugins: ['syntax-dynamic-import'],
+        options: {
+          plugins: ['syntax-dynamic-import'],
 
-					presets: [
-						[
-							'@babel/preset-env',
-							{
-								modules: false
-							}
-						]
-					]
-				}
-			}
-		]
-	},
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                modules: false
+              }
+            ]
+          ]
+        }
+      }
+    ]
+  },
 
-	optimization: {
-		splitChunks: {
-			cacheGroups: {
-				vendors: {
-					priority: -10,
-					test: /[\\/]node_modules[\\/]/
-				}
-			},
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          priority: -10,
+          test: /[\\/]node_modules[\\/]/
+        }
+      },
 
-			chunks: 'async',
-			minChunks: 1,
-			minSize: 30000,
-			name: true
-		}
-	},
+      chunks: 'async',
+      minChunks: 1,
+      minSize: 30000,
+      name: true
+    }
+  }
 };
