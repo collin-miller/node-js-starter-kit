@@ -1,10 +1,10 @@
-import CaptureStdout from 'capture-stdout';
-import HelloWorld from './helloWorld';
-import logger from './logger';
+import CaptureStdout from "capture-stdout";
+import HelloWorld from "./helloWorld";
+import logger from "./logger";
 
-test('Is a useless and basic test', () => {
+test("Is a useless and basic test", () => {
   expect.assertions(1);
-  const msg = 'Test Message';
+  const msg = "Test Message";
   const helloWorld = new HelloWorld({ message: msg, logger });
   const captureStdout = new CaptureStdout();
   captureStdout.startCapture();

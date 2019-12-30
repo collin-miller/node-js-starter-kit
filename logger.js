@@ -1,6 +1,6 @@
-import { createLogger, transports, format } from 'winston';
-import DailyRotateFile from 'winston-daily-rotate-file';
-import path from 'path';
+import { createLogger, transports, format } from "winston";
+import DailyRotateFile from "winston-daily-rotate-file";
+import path from "path";
 
 const { combine, timestamp, label, printf } = format;
 
@@ -13,14 +13,14 @@ const myFormat = printf(
 
 function getLogFileName() {
   const logDir = process.env.LOG_DIR || __dirname;
-  const logFileName = process.env.SERVICE_NAME || 'application';
+  const logFileName = process.env.SERVICE_NAME || "application";
   return path.join(logDir, `${logFileName}-%DATE%.log`);
 }
 
 const logger = createLogger({
-  level: process.env.LOG_LEVEL || 'info',
+  level: process.env.LOG_LEVEL || "info",
   format: combine(
-    label({ label: process.env.SERVICE_NAME || 'application' }),
+    label({ label: process.env.SERVICE_NAME || "application" }),
     timestamp(),
     myFormat
   ),
@@ -30,9 +30,9 @@ const logger = createLogger({
     }),
     new DailyRotateFile({
       filename: getLogFileName(),
-      datePattern: 'YYYY-MM-DD',
-      maxSize: '20m',
-      maxFiles: '14d'
+      datePattern: "YYYY-MM-DD",
+      maxSize: "20m",
+      maxFiles: "14d"
     })
   ]
 });

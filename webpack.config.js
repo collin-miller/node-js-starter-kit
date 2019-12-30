@@ -1,6 +1,6 @@
-const path = require('path');
-const webpack = require('webpack');
-const nodeExternals = require('webpack-node-externals');
+const path = require("path");
+const webpack = require("webpack");
+const nodeExternals = require("webpack-node-externals");
 
 /*
  * SplitChunksPlugin is enabled by default and replaced
@@ -16,12 +16,12 @@ const nodeExternals = require('webpack-node-externals');
  */
 
 module.exports = {
-  mode: 'development',
-  entry: './index.js',
+  mode: "development",
+  entry: "./index.js",
 
   output: {
-    filename: 'server.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: "server.js",
+    path: path.resolve(__dirname, "dist")
   },
 
   plugins: [new webpack.ProgressPlugin()],
@@ -32,14 +32,14 @@ module.exports = {
       {
         test: /.(js|jsx)$/,
         include: [],
-        loader: 'babel-loader',
+        loader: "babel-loader",
 
         options: {
-          plugins: ['syntax-dynamic-import'],
+          plugins: ["syntax-dynamic-import"],
 
           presets: [
             [
-              '@babel/preset-env',
+              "@babel/preset-env",
               {
                 modules: false
               }
@@ -59,7 +59,7 @@ module.exports = {
         }
       },
 
-      chunks: 'async',
+      chunks: "async",
       minChunks: 1,
       minSize: 30000,
       name: true

@@ -3,14 +3,12 @@ env:
   es6: true
   jest: true
 extends:
-  - airbnb
+  - airbnb-base
   - prettier
 globals:
   Atomics: readonly
   SharedArrayBuffer: readonly
 parserOptions:
-  ecmaFeatures:
-    jsx: false
   ecmaVersion: 2018
   sourceType: module
 plugins:
